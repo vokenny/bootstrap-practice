@@ -4,3 +4,19 @@
   font-size: 10px; /* Fallback font size */
   font-size: calc(10px + 0.5vw);
 }
+
+/* Footer area only */
+.to-top {
+  clear: both;
+  text-align: center;
+  padding: 5vh;
+}
+
+footer {
+  border-top: 2px solid #888888;
+  background-color: #00c0c0;
+}
+
+div.footer-contact {
+  padding-top: 5vh;
+}
