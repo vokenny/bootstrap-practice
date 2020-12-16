@@ -1,4 +1,6 @@
 /* Applied consistently across site */
 * {
   font-family: "Source Sans Pro", sans-serif;
+  font-size: 10px; /* Fallback font size */
+  font-size: calc(10px + 0.5vw);
 }

@@ -1,0 +1,44 @@
+#logo {
+  width: 20px; /* Fallback width */
+  width: calc(20px + 2vw);
+  height: auto;
+}
+
+#brand {
+  display: inline;
+  vertical-align: middle;
+  font: "Major Mono Display", monospace;
+  font-size: 16px; /* Fallback width */
+  font-size: calc(16px + 1vw);
+}
+
+.navbar {
+  background-color: #01a1a1;
+  padding-top: 0.5vh;
+  padding-bottom: 0.5vh;
+  box-shadow: 0px 3px 3px #888888;
+}
+
+.navbar-nav {
+  margin-left: auto;
+}
+
+a.nav-link {
+  font-size: 12px; /* Fallback font size */
+  font-size: calc(12px + 0.7vw);
+  border-radius: 10px;
+}
+
+.navbar-expand-lg .navbar-nav .nav-link {
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.active {
+  text-decoration: underline;
+}
+
+.nav-link:hover {
+  background-color: #ffffff;
+  border-radius: 10px;
+}
