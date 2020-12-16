@@ -5,6 +5,14 @@
   font-size: calc(10px + 0.5vw);
 }
 
+#ajax-loader {
+  padding: 25vw;
+}
+
+h2 {
+  padding-top: 2.5vh;
+}
+
 /* Footer area only */
 .to-top {
   clear: both;
@@ -19,4 +27,17 @@ footer {
 
 div.footer-contact {
   padding-top: 5vh;
+}
+
+/* Home snippet only */
+#carouselWithIndicators {
+  margin: auto;
+  width: 85%;
+  padding-top: 2.5vh;
+  overflow: hidden;
+}
+
+#carouselWithIndicators .carousel-inner {
+  border: 2px solid #888888;
+  border-radius: 20vw/25vw;
 }
