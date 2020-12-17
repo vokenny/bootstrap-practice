@@ -7,6 +7,7 @@
   
   var homeHtmlUrl = "snippets/home.html";
   var tableHtmlUrl = "snippets/table.html";
+  var galleryHtmlUrl = "snippets/gallery.html";
 
   // Convenience function for inserting innerHTML for 'selector'
   function insertHtml (selector, html) {
@@ -56,6 +57,14 @@
   utils.loadAndShowGallery = function () {
     updateTitle("Photo Gallery");
     showLoading("#content");
+
+    $ajaxUtils.sendGetRequest(
+      galleryHtmlUrl,
+      function (galleryHtml) {
+        insertHtml("#content", galleryHtml);
+      },
+      false
+    );
   };
 
   utils.loadAndShowCards = function () {
