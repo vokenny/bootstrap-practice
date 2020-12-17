@@ -89,3 +89,35 @@ Works on *most* browsers
   border: 2px solid #888888;
   box-shadow: -10px 10px #008888;
 }
+
+/* Card Containers snippet only */
+.review-card {
+  display: flex;
+  float: left;
+  margin: 2.5vh auto;
+}
+
+.card {
+  margin: 1vh 1vw;
+  border: 2px solid #888888;
+  box-shadow: -10px 10px #008888;
+  border-radius: 20px;
+}
+
+.card-body {
+  display: flex;
+  align-items: center;
+  padding: 2.5vw;
+  border-radius: 20px;
+}
+
+.card-text {
+  padding-bottom: 2vh;
+}
+
+.client-name {
+  position: absolute;
+  right: 15px;
+  bottom: 10px;
+  margin: 0px;
+}

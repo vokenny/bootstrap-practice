@@ -8,6 +8,7 @@
   var homeHtmlUrl = "snippets/home.html";
   var tableHtmlUrl = "snippets/table.html";
   var galleryHtmlUrl = "snippets/gallery.html";
+  var cardsHtmlUrl = "snippets/cards.html";
 
   // Convenience function for inserting innerHTML for 'selector'
   function insertHtml (selector, html) {
@@ -70,6 +71,14 @@
   utils.loadAndShowCards = function () {
     updateTitle("Card Containers");
     showLoading("#content");
+
+    $ajaxUtils.sendGetRequest(
+      cardsHtmlUrl,
+      function (cardsHtml) {
+        insertHtml("#content", cardsHtml);
+      },
+      false
+    );
   };
 
   global.$utils = utils;
