@@ -80,8 +80,10 @@ Works on *most* browsers
 
 /* Gallery snippet only */
 #gallery div {
+  display: grid;
   float: left;
   margin: 2.5vh auto;
+  align-items: center;
 }
 
 #gallery img {
