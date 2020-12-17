@@ -34,6 +34,7 @@
   <body>
     <nav
       class="navbar sticky-top navbar-expand-lg navbar-light container-fluid"
+      aria-label="Main navigation"
     >
       <!-- Logo and Brand name -->
       <a class="navbar-brand brand-name" href="index.html">
@@ -49,14 +50,14 @@
 
       <!-- Hamburger menu on tablet and mobile -->
       <button
-        id="navbarToggle"
+        id="navbar-toggle"
         class="navbar-toggler"
         type="button"
         data-toggle="collapse"
         data-target="#navbar-menu"
         aria-controls="navbar-menu"
         aria-expanded="false"
-        aria-label="Toggle navigation"
+        aria-label="Navigation options"
       >
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -91,11 +92,11 @@
     <!-- Container ends here -->
 
     <!-- Content snippets inserted here -->
-    <section id="content" class="container"></section>
+    <main id="content" role="main" class="container"></main>
 
-    <div class="to-top">
+    <nav class="to-top" aria-label="Navigate to top of page">
       <a id="to-top" href="#">Back to top</a>
-    </div>
+    </nav>
 
     <footer>
       <section class="container-fluid">

@@ -8,7 +8,7 @@ $(function () { // Same as document.addEventListener("DOMContentLoaded"...
   // 3. lose focus on navbar
   // 4. then decrease width
   // then it will *still be expanded*
-  $("#navbarToggle").on("blur", function () {
+  $("#navbar-toggle").on("blur", function () {
     var screenWidth = window.innerWidth;
     if (screenWidth < 992) {
       $("#navbar-menu").collapse('hide');
