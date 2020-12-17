@@ -6,6 +6,7 @@
   var appTitle = "Bootstrap Practice";
   
   var homeHtmlUrl = "snippets/home.html";
+  var tableHtmlUrl = "snippets/table.html";
 
   // Convenience function for inserting innerHTML for 'selector'
   function insertHtml (selector, html) {
@@ -42,6 +43,14 @@
   utils.loadAndShowTable = function () {
     updateTitle("Info Table");
     showLoading("#content");
+
+    $ajaxUtils.sendGetRequest(
+      tableHtmlUrl,
+      function (tableHtml) {
+        insertHtml("#content", tableHtml);
+      },
+      false
+    );
   };
 
   utils.loadAndShowGallery = function () {
