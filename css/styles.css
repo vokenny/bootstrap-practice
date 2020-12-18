@@ -127,3 +127,21 @@ Works on *most* browsers
   bottom: 10px;
   margin: 0px;
 }
+
+/* Form snippet only */
+#success-alert {
+  margin: auto;
+}
+
+#example-form {
+  margin: 2.5vw auto;
+}
+
+form div.form-group {
+  margin: 1vw auto;
+}
+
+#submit-button {
+  display: block;
+  margin: auto;
+}
