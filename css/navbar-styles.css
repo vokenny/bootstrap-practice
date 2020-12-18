@@ -2,6 +2,7 @@
   width: 20px; /* Fallback width */
   width: calc(20px + 2vw);
   height: auto;
+  margin-right: 5px;
 }
 
 #brand {

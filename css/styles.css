@@ -39,7 +39,7 @@ div.footer-contact {
 
 #carouselWithIndicators .carousel-inner {
   border: 2px solid #888888;
-  border-radius: 20vw/25vw;
+  border-radius: 10vw/5vw;
 }
 
 /*
@@ -53,7 +53,7 @@ Works on *most* browsers
 
 /* Table snippet only */
 #menu-table {
-  max-width: 1280px;
+  max-width: 1000px;
   width: 75vw;
   margin: 5vh auto;
   border-radius: 20px;
@@ -69,13 +69,17 @@ Works on *most* browsers
   margin: 0px;
 }
 
+#menu-table th {
+  padding-left: 1rem;
+}
+
 #menu-table th.sub-item {
-  text-indent: 2rem;
-  /* padding-left: 4em; */
+  padding-left: 2rem;
 }
 
 #menu-table .price {
   text-align: right;
+  padding-right: 1rem;
 }
 
 /* Gallery snippet only */
