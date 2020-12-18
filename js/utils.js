@@ -9,6 +9,7 @@
   var tableHtmlUrl = "snippets/table.html";
   var galleryHtmlUrl = "snippets/gallery.html";
   var cardsHtmlUrl = "snippets/cards.html";
+  var formHtmlUrl = "snippets/form.html";
 
   // Convenience function for inserting innerHTML for 'selector'
   function insertHtml (selector, html) {
@@ -76,6 +77,19 @@
       cardsHtmlUrl,
       function (cardsHtml) {
         insertHtml("#content", cardsHtml);
+      },
+      false
+    );
+  };
+
+  utils.loadAndShowForm = function () {
+    updateTitle("Form & Alert");
+    showLoading("#content");
+
+    $ajaxUtils.sendGetRequest(
+      formHtmlUrl,
+      function (formHtml) {
+        insertHtml("#content", formHtml);
       },
       false
     );

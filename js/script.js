@@ -44,4 +44,10 @@ $(function () { // Same as document.addEventListener("DOMContentLoaded"...
     $("html, body").animate({ scrollTop: 0 }, "slow");
   });
 
+  $("#nav-form").on("click", function () {
+    $navUtils.applyActiveToMenuItem("#nav-form");
+    $utils.loadAndShowForm();
+    $("html, body").animate({ scrollTop: 0 }, "slow");
+  });
+
 });
