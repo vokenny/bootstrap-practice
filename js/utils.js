@@ -105,6 +105,7 @@
     );
   };
 
+  // TODO: Add form validation on empty fields before showing success alert
   utils.showSuccessFormAlert = function () {
     var fullName = document.querySelector("#input-fullname").value;
     var emailAddress = document.querySelector("#input-email").value;
