@@ -13,6 +13,7 @@
       type="text"
       class="form-control"
       id="input-fullname"
+      name="fullname"
       placeholder="Enter full name"
     />
   </div>
@@ -22,6 +23,7 @@
       type="email"
       class="form-control"
       id="input-email"
+      name="email"
       aria-describedby="emailHelp"
       placeholder="Enter email"
     />
@@ -33,7 +35,7 @@
     id="submit-button"
     type="submit"
     class="btn btn-primary"
-    onclick="$utils.showSuccessFormAlert()"
+    method="post"
   >
     Submit
   </button>
