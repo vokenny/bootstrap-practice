@@ -1,7 +1,7 @@
 (function (global) {
 
   // namespace for ajax utilities
-  var ajaxUtils = {};
+  var ajax = {};
   
   function getRequestObject() {
     if (window.XMLHttpRequest) {
@@ -12,8 +12,8 @@
     }
   }
   
-  ajaxUtils.sendGetRequest = 
-    function(requestUrl, responseHandler, isJsonResponse) {
+  ajax.sendGetRequest = 
+    function (requestUrl, responseHandler, isJsonResponse) {
       var request = getRequestObject();
       request.onreadystatechange = 
         function() { 
@@ -50,6 +50,6 @@
   }
 
   // Expose utility to the global object
-  global.$ajaxUtils = ajaxUtils;
+  global.$ajax = ajax;
   
 })(window);

@@ -1,7 +1,7 @@
 <h2 class="text-center">Beep Boop Test Form</h2>
 
 <p class="text-center">
-  Pressing 'Submit' will play back the form data in an alert
+  Submitting the form will play back the form data in an alert
 </p>
 
 <div id="success-alert" class="col-10 col-sm-9 col-md-8"></div>
@@ -35,7 +35,7 @@
     id="submit-button"
     type="submit"
     class="btn btn-primary"
-    method="post"
+    onclick="$utils.showSuccessFormAlert(); return false;"
   >
     Submit
   </button>

@@ -44,7 +44,7 @@
     updateTitle("Home");
     showLoading("#content");
 
-    $ajaxUtils.sendGetRequest(
+    $ajax.sendGetRequest(
       homeHtmlUrl,
       function (homeHtml) {
         insertHtml("#content", homeHtml);
@@ -57,7 +57,7 @@
     updateTitle("Info Table");
     showLoading("#content");
 
-    $ajaxUtils.sendGetRequest(
+    $ajax.sendGetRequest(
       tableHtmlUrl,
       function (tableHtml) {
         insertHtml("#content", tableHtml);
@@ -70,7 +70,7 @@
     updateTitle("Photo Gallery");
     showLoading("#content");
 
-    $ajaxUtils.sendGetRequest(
+    $ajax.sendGetRequest(
       galleryHtmlUrl,
       function (galleryHtml) {
         insertHtml("#content", galleryHtml);
@@ -83,7 +83,7 @@
     updateTitle("Card Containers");
     showLoading("#content");
 
-    $ajaxUtils.sendGetRequest(
+    $ajax.sendGetRequest(
       cardsHtmlUrl,
       function (cardsHtml) {
         insertHtml("#content", cardsHtml);
@@ -96,7 +96,7 @@
     updateTitle("Form & Alert");
     showLoading("#content");
 
-    $ajaxUtils.sendGetRequest(
+    $ajax.sendGetRequest(
       formHtmlUrl,
       function (formHtml) {
         insertHtml("#content", formHtml);
@@ -107,19 +107,21 @@
 
   // TODO: Add form validation on empty fields before showing success alert
   utils.showSuccessFormAlert = function () {
-    var fullName = document.querySelector("#input-fullname").value;
-    var emailAddress = document.querySelector("#input-email").value;
+    var form = document.querySelector("#example-form");
+    var formData = new FormData(form);
 
-    $ajaxUtils.sendGetRequest(
+    $ajax.sendGetRequest(
       successAlertHtmlUrl,
       function (successAlertHtml) {
-        var successAlertWithName = insertProperty(successAlertHtml, "fullname", fullName);
-        var successAlertComplete = insertProperty(successAlertWithName, "email", emailAddress);
+        var successAlertWithName = insertProperty(successAlertHtml, "fullname", formData.get("fullname"));
+        var successAlertComplete = insertProperty(successAlertWithName, "email", formData.get("email"));
     
         insertHtml("#success-alert", successAlertComplete);
       },
       false
     );
+
+    $("html, body").animate({ scrollTop: 0 }, "slow");
   };
 
   global.$utils = utils;
