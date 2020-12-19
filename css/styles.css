@@ -69,11 +69,11 @@ Works on *most* browsers
   margin: 0px;
 }
 
-#menu-table th {
+#menu-table tr > * {
   padding-left: 1rem;
 }
 
-#menu-table th.sub-item {
+#menu-table tr > td.sub-item {
   padding-left: 2rem;
 }
 
