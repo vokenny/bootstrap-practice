@@ -105,16 +105,57 @@
     );
   };
 
-  // TODO: Add form validation on empty fields before showing success alert
-  utils.showSuccessFormAlert = function () {
+  utils.validateForm = function () {
+    // Set whole form to neutral state first upon submission
+    resetState();
+
     var form = document.querySelector("#example-form");
     var formData = new FormData(form);
 
+    // Make sure they're all non-empty
+    for (var pair of formData.entries()) {
+      if (pair[1] === "") {
+        // change '.invalid-feedback' to display: block;
+        document.querySelector("#" + pair[0] + " + .invalid-feedback").style.display = "block";
+      } else {
+        // apply 'is-valid' class to input
+        var classes = document.querySelector("#" + pair[0]).className;
+        classes += " is-valid";
+        document.querySelector("#" + pair[0]).className = classes;
+      };
+    };
+
+    // If all form inputs have 'is-valid', then show the succcess alert
+    var formArray = Array.from(document.querySelectorAll(".form-control"));
+    var isValidForm = formArray.every(checkForIsValidClass);
+
+    if (isValidForm) {
+      showSuccessFormAlert(formData);
+    };
+  };
+
+  function resetState () {
+    document.querySelector("#success-alert").innerHTML = "";
+
+    document.querySelectorAll(".form-control").forEach(function (elem) {
+      elem.classList.remove("is-valid");
+    });
+    
+    document.querySelectorAll(".invalid-feedback").forEach(function (elem) {
+      elem.style.display = "none";
+    });
+  };
+
+  function checkForIsValidClass (elem) {
+    return elem.classList.contains("is-valid");
+  };
+
+  function showSuccessFormAlert (formData) {
     $ajax.sendGetRequest(
       successAlertHtmlUrl,
       function (successAlertHtml) {
-        var successAlertWithName = insertProperty(successAlertHtml, "fullname", formData.get("fullname"));
-        var successAlertComplete = insertProperty(successAlertWithName, "email", formData.get("email"));
+        var successAlertWithName = insertProperty(successAlertHtml, "fullname", formData.get("input-fullname"));
+        var successAlertComplete = insertProperty(successAlertWithName, "email", formData.get("input-email"));
     
         insertHtml("#success-alert", successAlertComplete);
       },
