@@ -14,7 +14,7 @@
 }
 
 .navbar {
-  background-color: #00c0c0;
+  background-color: #00aa99;
   padding-top: 0.5vh;
   padding-bottom: 0.5vh;
   box-shadow: 0px 3px 3px #888888;
@@ -27,6 +27,7 @@
 a.nav-link {
   font-size: 12px; /* Fallback font size */
   font-size: calc(12px + 0.7vw);
+  color: #ffffff;
   border-radius: 10px;
 }
 
