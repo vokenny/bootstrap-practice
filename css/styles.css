@@ -10,7 +10,7 @@
 }
 
 h2 {
-  padding-top: 2.5vh;
+  padding-top: 5vh;
 }
 
 /* Footer area only */
@@ -33,7 +33,7 @@ div.footer-contact {
 #carouselWithIndicators {
   margin: auto;
   width: 85%;
-  padding-top: 2.5vh;
+  padding-top: 5vh;
   overflow: hidden;
 }
 
@@ -137,8 +137,8 @@ Works on *most* browsers
   margin: 2.5vw auto;
 }
 
-#example-form div {
-  margin: 1vw auto;
+.form-row > div {
+  margin: 2vw auto;
 }
 
 #submit-button {
