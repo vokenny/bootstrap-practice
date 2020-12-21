@@ -1,5 +1,5 @@
 # bootstrap-practice
-Familiarizing with Bootstrap 4 components
+Familiarizing with Bootstrap 4 components, and trying out the Javascript Cypress test framework
 
 GitHub Pages link
 
