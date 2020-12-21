@@ -107,16 +107,20 @@
 
   utils.validateForm = function () {
     // Set whole form to neutral state first upon submission
-    resetState();
+    resetFormState();
 
     var form = document.querySelector("#example-form");
     var formData = new FormData(form);
 
-    // Make sure they're all non-empty
     for (var pair of formData.entries()) {
       if (pair[1] === "") {
         // change '.invalid-feedback' to display: block;
         document.querySelector("#" + pair[0] + " + .invalid-feedback").style.display = "block";
+
+        // apply 'is-invalid' class to input
+        var classes = document.querySelector("#" + pair[0]).className;
+        classes += " is-invalid";
+        document.querySelector("#" + pair[0]).className = classes;
       } else {
         // apply 'is-valid' class to input
         var classes = document.querySelector("#" + pair[0]).className;
@@ -134,11 +138,12 @@
     };
   };
 
-  function resetState () {
+  function resetFormState () {
     document.querySelector("#success-alert").innerHTML = "";
 
     document.querySelectorAll(".form-control").forEach(function (elem) {
       elem.classList.remove("is-valid");
+      elem.classList.remove("is-invalid");
     });
     
     document.querySelectorAll(".invalid-feedback").forEach(function (elem) {
