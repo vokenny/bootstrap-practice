@@ -1,0 +1,22 @@
+{
+  "name": "bootstrap-practice",
+  "version": "1.0.0",
+  "description": "Bootstrap practice",
+  "main": "index.js",
+  "scripts": {
+    "test": "cypress open"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vokenny/bootstrap-practice.git"
+  },
+  "author": "Kenny Vo",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/vokenny/bootstrap-practice/issues"
+  },
+  "homepage": "https://github.com/vokenny/bootstrap-practice#readme",
+  "devDependencies": {
+    "cypress": "^6.1.0"
+  }
+}
