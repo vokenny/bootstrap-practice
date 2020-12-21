@@ -106,18 +106,20 @@
   };
 
   utils.validateForm = function () {
-    // Set whole form to neutral state first upon submission
+    // Set whole form to neutral state first upon submission before validating
     resetFormState();
 
     var form = document.querySelector("#example-form");
     var formData = new FormData(form);
 
     for (var pair of formData.entries()) {
-      if (pair[1] === "") {
-        displayError(pair[0]);
-        applyValidityClass(false, pair[0])
-      } else {
-        applyValidityClass(true, pair[0])
+      switch (pair[0]) {
+        case "input-fullname":
+          checkFullName(pair);
+          break;
+        case "input-email":
+          checkEmail(pair);
+          break;
       };
     };
 
@@ -127,6 +129,8 @@
 
     if (isValidForm) {
       showSuccessFormAlert(formData);
+    } else {
+      $("html, body").animate({ scrollTop: 0 }, "slow");
     };
   };
 
@@ -138,9 +142,31 @@
       elem.classList.remove("is-invalid");
     });
     
+    // Hide the error messages
     document.querySelectorAll(".invalid-feedback").forEach(function (elem) {
       elem.style.display = "none";
     });
+  };
+
+  function checkFullName (pair) {
+    if (pair[1] === "" || pair[1].length > 100) {
+      applyValidityClass(false, pair[0]);
+      displayError(pair[0]);
+    } else {
+      applyValidityClass(true, pair[0]);
+    };
+  };
+
+  function checkEmail (pair) {
+    // Regex from https://www.w3resource.com/javascript/form/email-validation.php
+    var emailRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+
+    if (pair[1] === "" || !pair[1].match(emailRegex)) {
+      applyValidityClass(false, pair[0]);
+      displayError(pair[0]);
+    } else {
+      applyValidityClass(true, pair[0]);
+    };
   };
 
   function applyValidityClass (isValid, selector) {
@@ -150,11 +176,11 @@
 
     classes += validity;
     elem.className = classes;
-  }
+  };
 
   function displayError (selector) {
     document.querySelector("#" + selector + " + .invalid-feedback").style.display = "block";
-  }
+  };
 
   function checkForIsValidClass (elem) {
     return elem.classList.contains("is-valid");
