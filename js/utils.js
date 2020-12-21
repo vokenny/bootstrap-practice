@@ -114,18 +114,10 @@
 
     for (var pair of formData.entries()) {
       if (pair[1] === "") {
-        // change '.invalid-feedback' to display: block;
-        document.querySelector("#" + pair[0] + " + .invalid-feedback").style.display = "block";
-
-        // apply 'is-invalid' class to input
-        var classes = document.querySelector("#" + pair[0]).className;
-        classes += " is-invalid";
-        document.querySelector("#" + pair[0]).className = classes;
+        displayError(pair[0]);
+        applyValidityClass(false, pair[0])
       } else {
-        // apply 'is-valid' class to input
-        var classes = document.querySelector("#" + pair[0]).className;
-        classes += " is-valid";
-        document.querySelector("#" + pair[0]).className = classes;
+        applyValidityClass(true, pair[0])
       };
     };
 
@@ -150,6 +142,19 @@
       elem.style.display = "none";
     });
   };
+
+  function applyValidityClass (isValid, selector) {
+    var elem = document.querySelector("#" + selector);
+    var classes = elem.className;
+    var validity = isValid ? " is-valid" : " is-invalid";
+
+    classes += validity;
+    elem.className = classes;
+  }
+
+  function displayError (selector) {
+    document.querySelector("#" + selector + " + .invalid-feedback").style.display = "block";
+  }
 
   function checkForIsValidClass (elem) {
     return elem.classList.contains("is-valid");
