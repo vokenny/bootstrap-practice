@@ -34,7 +34,7 @@ context("Navbar Spec", () => {
         })
     })
 
-    describe("Navbar interaction", () => {
+    describe("Navbar interaction - Home snippet", () => {
         it("Clicking the logo should show home.html snippet", () => {
             cy.get("#logo").click()
             cy.get("title").contains("Home - Bootstrap Practice")
@@ -52,30 +52,18 @@ context("Navbar Spec", () => {
             cy.get("title").contains("Home - Bootstrap Practice")
             cy.get("#carouselWithIndicators").should("be.visible")
         })
+    })
 
-        it("Clicking 'Info Table' should show table.html snippet", () => {
-            cy.get("#nav-table").click()
-            cy.get("title").contains("Info Table - Bootstrap Practice")
-            cy.get("h2").contains("Vietnamese Dishes")
-        })
+    const testData = require("../fixtures/navbar.json")
 
-        it("Clicking 'Gallery' should show gallery.html snippet", () => {
-            cy.get("#nav-gallery").click()
-            cy.get("title").contains("Photo Gallery - Bootstrap Practice")
-            cy.get("h2").contains("Photo Gallery")
-        })
-
-        it("Clicking 'Card Containers' should show cards.html snippet", () => {
-            cy.get("#nav-cards").click()
-            cy.get("title").contains("Card Containers - Bootstrap Practice")
-            cy.get("h2").contains("Client Testimonials")
-        })
-
-        it("Clicking 'Form & Alert' should show form.html snippet", () => {
-            cy.get("#nav-form").click()
-            cy.get("title").contains("Form & Alert - Bootstrap Practice")
-            cy.get("h2").contains("Beep Boop Test Form")
-        })
+    testData.forEach((testCase) =>{
+        describe("Navbar interaction - Other snippets", () => {
+            it(`Clicking '${testCase.link}' should show ${testCase.snippet} snippet`, () => {
+                cy.get(`${testCase.linkId}`).click()
+                cy.get("title").contains(`${testCase.title}`)
+                cy.get("h2").contains(`${testCase.heading}`)
+            })
+        })        
     })
 
 })
