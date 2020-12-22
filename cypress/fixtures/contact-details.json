@@ -1,13 +1,13 @@
 {
-    "openinghours": {
-        "days": "Monday - Friday",
-        "hours": "8:00am - 4:30pm"
-    },
-    "phone": "012345 123456",
-    "address": {
-        "building": "Building name",
-        "street": "Street name",
-        "city": "Town/City",
-        "postcode": "Postcode"    
-    }
+  "openinghours": {
+    "days": "Monday - Friday",
+    "hours": "8:00am - 4:30pm"
+  },
+  "phone": "012345 123456",
+  "address": {
+    "building": "Building name",
+    "street": "Street name",
+    "city": "Town/City",
+    "postcode": "Postcode"    
+  }
 }

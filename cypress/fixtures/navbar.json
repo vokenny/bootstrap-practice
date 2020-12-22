@@ -1,30 +1,30 @@
 [
-    {
-        "link": "Info Table",
-        "snippet": "table.html",
-        "linkId": "#nav-table",
-        "title": "Info Table - Bootstrap Practice",
-        "heading": "Vietnamese Dishes"
-    },
-    {
-        "link": "Gallery",
-        "snippet": "gallery.html",
-        "linkId": "#nav-gallery",
-        "title": "Photo Gallery - Bootstrap Practice",
-        "heading": "Photo Gallery"
-    },
-    {
-        "link": "Card Containers",
-        "snippet": "cards.html",
-        "linkId": "#nav-cards",
-        "title": "Card Containers - Bootstrap Practice",
-        "heading": "Client Testimonials"
-    },
-    {
-        "link": "Form & Alert",
-        "snippet": "form.html",
-        "linkId": "#nav-form",
-        "title": "Form & Alert - Bootstrap Practice",
-        "heading": "Beep Boop Test Form"
-    }
+  {
+    "link": "Info Table",
+    "snippet": "table.html",
+    "linkId": "#nav-table",
+    "title": "Info Table - Bootstrap Practice",
+    "heading": "Vietnamese Dishes"
+  },
+  {
+    "link": "Gallery",
+    "snippet": "gallery.html",
+    "linkId": "#nav-gallery",
+    "title": "Photo Gallery - Bootstrap Practice",
+    "heading": "Photo Gallery"
+  },
+  {
+    "link": "Card Containers",
+    "snippet": "cards.html",
+    "linkId": "#nav-cards",
+    "title": "Card Containers - Bootstrap Practice",
+    "heading": "Client Testimonials"
+  },
+  {
+    "link": "Form & Alert",
+    "snippet": "form.html",
+    "linkId": "#nav-form",
+    "title": "Form & Alert - Bootstrap Practice",
+    "heading": "Beep Boop Test Form"
+  }
 ]

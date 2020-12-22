@@ -1,0 +1,12 @@
+{
+  "nameField": {
+    "label": "Full name",
+    "helptext": "Your full name must be fewer or equal to 100 characters.",
+    "placeholder": "Enter full name"
+  },
+  "emailField": {
+    "label": "Email address",
+    "helptext": "We'll never share your email with anyone else.",
+    "placeholder": "Enter email address"
+  }
+}

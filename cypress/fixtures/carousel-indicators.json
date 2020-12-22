@@ -1,14 +1,14 @@
 [
-    {
-        "selector": "ol.carousel-indicators > li:first-child",
-        "caption": "First slide"
-    },
-    {
-        "selector": "ol.carousel-indicators > li:nth-child(2)",
-        "caption": "Second slide"
-    },
-    {
-        "selector": "ol.carousel-indicators > li:last-child",
-        "caption": "Third slide"
-    }
+  {
+    "selector": "ol.carousel-indicators > li:first-child",
+    "caption": "First slide"
+  },
+  {
+    "selector": "ol.carousel-indicators > li:nth-child(2)",
+    "caption": "Second slide"
+  },
+  {
+    "selector": "ol.carousel-indicators > li:last-child",
+    "caption": "Third slide"
+  }
 ]
