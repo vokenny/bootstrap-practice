@@ -23,7 +23,7 @@ context("Navbar Spec", () => {
             i.e. 
             var navItems = cy.get("#foot-openinghours")
             navItems.contains("Home")
-            navItems.contains("Info Table") // Still looks inside the smaller scope - no idea why
+            navItems.contains("Info Table") // Still looks inside the smaller scope
             */
 
             cy.get(".navbar-nav > li").contains("Home")

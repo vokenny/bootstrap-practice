@@ -13,3 +13,8 @@ https://vokenny.github.io/bootstrap-practice/index.html
 [Axe](https://www.deque.com/axe/): 7 errors for poor contrast
 
 [HTML Validator](https://addons.mozilla.org/en-US/firefox/addon/html-validator/): No errors
+
+## Known bugs
+1. 'Next' and 'Back' links on Homepage carousel expand outside of carousel borders in the corners
+2. Viewport in Tablet mode isn't completely filled due to lack of content - need to expand page to fill viewport
+3. Only collapses hamburger menu on blur if it is visible (e.g. in tablet/mobile view). If it is expanded and viewport is increased so the hamburger menu disappears, when you lose focus and reduce viewport so it reappears, the menu is still expanded

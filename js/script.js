@@ -2,13 +2,18 @@ $(function () { // Same as document.addEventListener("DOMContentLoaded"...
   // On first load, show Home view
   $utils.loadAndShowHome();
 
-  // N.B. only collapses under the threshold, therefore if you:
-  // 1. expand navbar toggle
-  // 2. increase width above threshold
-  // 3. lose focus on navbar
-  // 4. then decrease width
-  // then it will *still be expanded*
-  $("#navbar-toggle").on("blur", function () {
+  /*
+  N.B. only collapses under the threshold, therefore if you:
+  1. expand navbar toggle
+  2. increase width above threshold
+  3. lose focus on navbar
+  4. then decrease width
+  then it will *still be expanded*
+
+  It still occurs even without the screenWidth condition, because when you expand viewport and lose focus,
+  the expanded menu isn't visible in larger views anyway, so it doesn't collapse it
+  */
+  $("#navbar-menu").on("blur", function () {
     var screenWidth = window.innerWidth;
     if (screenWidth < 992) {
       $("#navbar-menu").collapse('hide');
