@@ -6,6 +6,8 @@ context("Footer Spec", () => {
     })
 
     describe("Footer content", () => {
+        const contact = require("../fixtures/contact-details.json")
+
         it("Opening hours should be correct", () => {
             /*
             Chaining .contains keeps looking inside the increasingly smaller scope,
@@ -19,20 +21,21 @@ context("Footer Spec", () => {
             */
 
             cy.get("#foot-openinghours").contains("Opening Hours")
-            cy.get("#foot-openinghours").contains("Monday - Friday")
-            cy.get("#foot-openinghours").contains("8:00am - 4:30pm")
+            cy.get("#foot-openinghours").contains(`${contact.openinghours.days}`)
+            cy.get("#foot-openinghours").contains(`${contact.openinghours.hours}`)
         })
 
         it("Phone should be correct", () => {
-            cy.get("#foot-phone").contains("012345 123456")
+            cy.get("#foot-phone").contains("Phone")
+            cy.get("#foot-phone").contains(`${contact.phone}`)
         })
 
         it("Address should be correct", () => {
             cy.get("#foot-address").contains("Address")
-            cy.get("#foot-address").contains("Building name")
-            cy.get("#foot-address").contains("Street name")
-            cy.get("#foot-address").contains("Town/City")
-            cy.get("#foot-address").contains("Postcode")
+            cy.get("#foot-address").contains(`${contact.address.building}`)
+            cy.get("#foot-address").contains(`${contact.address.street}`)
+            cy.get("#foot-address").contains(`${contact.address.city}`)
+            cy.get("#foot-address").contains(`${contact.address.postcode}`)
         })
     })
 

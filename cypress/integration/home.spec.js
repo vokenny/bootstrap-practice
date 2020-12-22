@@ -6,6 +6,8 @@ context("Home Snippet Spec", () => {
     })
 
     describe("Home content", () => {
+        const contact = require("../fixtures/contact-details.json")
+
         it("Opening hours should be correct", () => {
             /*
             Chaining .contains keeps looking inside the increasingly smaller scope,
@@ -19,20 +21,21 @@ context("Home Snippet Spec", () => {
             */
 
             cy.get("#openinghours").contains("Opening Hours")
-            cy.get("#openinghours").contains("Monday - Friday")
-            cy.get("#openinghours").contains("8:00am - 4:30pm")
+            cy.get("#openinghours").contains(`${contact.openinghours.days}`)
+            cy.get("#openinghours").contains(`${contact.openinghours.hours}`)
         })
 
         it("Phone should be correct", () => {
-            cy.get("#phone").contains("012345 123456")
+            cy.get("#phone").contains("Phone")
+            cy.get("#phone").contains(`${contact.phone}`)
         })
 
         it("Address should be correct", () => {
-            cy.get("#address").contains("Address")
-            cy.get("#address").contains("Building name")
-            cy.get("#address").contains("Street name")
-            cy.get("#address").contains("Town/City")
-            cy.get("#address").contains("Postcode")
+            cy.get("#foot-address").contains(`Address`)
+            cy.get("#foot-address").contains(`${contact.address.building}`)
+            cy.get("#foot-address").contains(`${contact.address.street}`)
+            cy.get("#foot-address").contains(`${contact.address.city}`)
+            cy.get("#foot-address").contains(`${contact.address.postcode}`)
         })
     })
 
@@ -49,7 +52,7 @@ context("Home Snippet Spec", () => {
             cy.get(".carousel-caption > h4").contains("Third slide")
         })
 
-        const carouselIndicators = require("../fixtures/carouselIndicators.json")
+        const carouselIndicators = require("../fixtures/carousel-indicators.json")
         carouselIndicators.forEach((indicator) =>
             it("Clicking the indicators should jump straight to the corresponding slide", () => {
                 cy.get(`${indicator.selector}`).click()
