@@ -54,9 +54,8 @@ context("Navbar Spec", () => {
         })
     })
 
-    const testData = require("../fixtures/navbar.json")
-
-    testData.forEach((testCase) =>{
+    const navbarData = require("../fixtures/navbar.json")
+    navbarData.forEach((testCase) =>{
         describe("Navbar interaction - Other snippets", () => {
             it(`Clicking '${testCase.link}' should show ${testCase.snippet} snippet`, () => {
                 cy.get(`${testCase.linkId}`).click()

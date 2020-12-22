@@ -4,7 +4,7 @@
   "description": "Bootstrap practice",
   "main": "index.js",
   "scripts": {
-    "test": "cypress open"
+    "cypress": "cypress open"
   },
   "repository": {
     "type": "git",

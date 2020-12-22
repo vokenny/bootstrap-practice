@@ -15,7 +15,7 @@ context("Footer Spec", () => {
             i.e. 
             var openingHours = cy.get("#foot-openinghours")
             openingHours.contains("Opening Hours")
-            openingHours.contains("Monday - Friday") // Still looks inside the smaller scope - no idea why
+            openingHours.contains("Monday - Friday") // Still looks inside the smaller scope
             */
 
             cy.get("#foot-openinghours").contains("Opening Hours")
