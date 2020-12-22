@@ -1,0 +1,22 @@
+[
+  {
+    "index": 1,
+    "name": "Phở",
+    "price": ""
+  },
+  {
+    "index": 2,
+    "name": "Chicken (Gà)",
+    "price": "£10.00"
+  },
+  {
+    "index": 3,
+    "name": "Beef (Bò)",
+    "price": "£11.00"
+  },
+  {
+    "index": 4,
+    "name": "Bún Bò Huế",
+    "price": "£14.00"
+  }
+]
