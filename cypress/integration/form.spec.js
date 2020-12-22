@@ -15,7 +15,7 @@ context("Form Snippet Spec", () => {
       cy.get("#success-alert").should("not.be.visible")
     })
 
-    it.only("Form field content should be correct", () => {
+    it("Form field content should be correct", () => {
       cy.get("#name-field").should("contain", `${form.nameField.label}`)
       cy.get("#name-field").should("contain", `${form.nameField.helptext}`)
       cy.get("#name-field > input")

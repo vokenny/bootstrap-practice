@@ -1,9 +1,15 @@
 # bootstrap-practice
 Familiarizing with Bootstrap 4 components, and trying out the Javascript Cypress test framework
 
-GitHub Pages link
+<b>GitHub Pages link</b>
 
 https://vokenny.github.io/bootstrap-practice/index.html
+
+<b>To open Cypress</b>
+
+As defined in `package.json`:
+
+`npm run cypress`
 
 ## Accessibility
 <b>21/12/20</b>
