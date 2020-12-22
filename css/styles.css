@@ -42,15 +42,6 @@ div.footer-contact {
   border-radius: 10vw/5vw;
 }
 
-/*
-Adding a border around the Next and Back carousel links to make them more visible.
-Works on *most* browsers
-*/
-.carousel-control-prev span,
-.carousel-control-next span {
-  -webkit-text-stroke: 1px #000000;
-}
-
 /* Table snippet only */
 #menu-table {
   max-width: 1000px;
