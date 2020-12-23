@@ -13,7 +13,7 @@ $(function () { // Same as document.addEventListener('DOMContentLoaded'...
   It still occurs even without the screenWidth condition, because when you expand viewport and lose focus,
   the expanded menu isn't visible in larger views anyway, so it doesn't collapse it
   */
-  $('#navbar-menu').on('blur', function () {
+  $('#navbar-toggle').on('blur', function () {
     var screenWidth = window.innerWidth;
     if (screenWidth < 992) {
       $('#navbar-menu').collapse('hide');
