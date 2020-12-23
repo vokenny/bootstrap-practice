@@ -9,8 +9,8 @@
   display: inline;
   vertical-align: middle;
   font-family: Major Mono Display, monospace;
-  font-size: 16px; /* Fallback width */
-  font-size: calc(16px + 1vw);
+  font-size: 12px; /* Fallback width */
+  font-size: calc(12px + 1vw);
 }
 
 .navbar {
