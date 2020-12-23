@@ -11,6 +11,10 @@ As defined in `package.json`:
 
 `npm run cypress`
 
+## TODO
+- Add tablet view tests
+- Add mobile view tests
+
 ## Accessibility
 <b>21/12/20</b>
 
