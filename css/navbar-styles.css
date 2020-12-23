@@ -25,8 +25,9 @@
 }
 
 a.nav-link {
-  font-size: 12px; /* Fallback font size */
-  font-size: calc(12px + 0.7vw);
+  font-size: 10px; /* Fallback font size */
+  font-size: calc(10px + 0.7vw);
+  margin: auto 0.5vw;
   color: #ffffff;
   border-radius: 10px;
 }
