@@ -8,7 +8,7 @@
 #brand {
   display: inline;
   vertical-align: middle;
-  font: "Major Mono Display", monospace;
+  font-family: Major Mono Display, monospace;
   font-size: 16px; /* Fallback width */
   font-size: calc(16px + 1vw);
 }

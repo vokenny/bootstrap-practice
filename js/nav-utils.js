@@ -3,10 +3,10 @@
   var navUtils = {};
 
   function removeActiveFromNavbarMenuItems () {
-    var menuItems = document.querySelectorAll(".nav-link");
+    var menuItems = document.querySelectorAll('.nav-link');
 
     menuItems.forEach(function (item) {
-      classes = item.className.replace(new RegExp("active", "g"), "");
+      classes = item.className.replace(new RegExp('active', 'g'), '');
       item.className = classes
     });
   };
@@ -17,8 +17,8 @@
     var elem = document.querySelector(selector);
     var classes = elem.className;
 
-    if (classes.indexOf("active") === -1) {
-      classes += " active";
+    if (classes.indexOf('active') === -1) {
+      classes += ' active';
       elem.className = classes;
     };
   };

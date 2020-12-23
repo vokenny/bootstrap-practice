@@ -7,7 +7,7 @@
     if (window.XMLHttpRequest) {
       return (new XMLHttpRequest());
     } else {
-      global.alert("Ajax is not supported!");
+      global.alert('Ajax is not supported!');
       return(null); 
     }
   }
@@ -21,8 +21,8 @@
                          responseHandler,
                          isJsonResponse); 
         };
-      request.open("GET", requestUrl, true);
-      request.setRequestHeader("SameSite", "Lax")
+      request.open('GET', requestUrl, true);
+      request.setRequestHeader('SameSite', 'Lax')
       request.send(null); // for POST only
     };
   
