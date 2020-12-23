@@ -39,18 +39,27 @@ context("Navbar Spec", () => {
       cy.get("#logo").click()
       cy.get("title").should("contain", "Home - Bootstrap Practice")
       cy.get("#carouselWithIndicators").should("be.visible")
+      cy.get("#nav-home")
+        .should("have.attr", "class")
+        .should("contain", "active")
     })
 
     it("Clicking the brand name should show home.html snippet", () => {
       cy.get("#brand").click()
       cy.get("title").should("contain", "Home - Bootstrap Practice")
       cy.get("#carouselWithIndicators").should("be.visible")
+      cy.get("#nav-home")
+      .should("have.attr", "class")
+      .should("contain", "active")
     })
 
     it("Clicking 'Home' should show home.html snippet", () => {
       cy.get("#nav-home").click()
       cy.get("title").should("contain", "Home - Bootstrap Practice")
       cy.get("#carouselWithIndicators").should("be.visible")
+      cy.get("#nav-home")
+      .should("have.attr", "class")
+      .should("contain", "active")
     })
   })
 
@@ -62,6 +71,9 @@ context("Navbar Spec", () => {
         cy.get(`${testCase.linkId}`).click()
         cy.get("title").should("contain", `${testCase.title}`)
         cy.get("h2").should("contain", `${testCase.heading}`)
+        cy.get(`${testCase.linkId}`)
+          .should("have.attr", "class")
+          .should("contain", "active")
       })
     })        
   })
