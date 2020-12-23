@@ -122,6 +122,7 @@ div.footer-contact {
 /* Form snippet only */
 #success-alert {
   margin: auto;
+  overflow-wrap: break-word;
 }
 
 #example-form {
