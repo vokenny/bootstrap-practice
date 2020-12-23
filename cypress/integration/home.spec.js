@@ -9,20 +9,11 @@ context("Home Snippet Spec", () => {
     const contact = require("../fixtures/contact-details.json")
 
     it("Opening hours should be correct", () => {
-      /*
-      Chaining .contains keeps looking inside the increasingly smaller scope,
-      so the whole element needs to be queried again if you want the whole element
-
-      Assigning the element to a variable, and referencing the variable doesn't work either
-      i.e. 
-      var openingHours = cy.get("#openinghours")
+      const openingHours = cy.get("#openinghours")
+      
       openingHours.should("contain", "Opening Hours")
-      openingHours.should("contain", "Monday - Friday") // Still looks inside the smaller scope
-      */
-
-      cy.get("#openinghours").should("contain", "Opening Hours")
-      cy.get("#openinghours").should("contain", `${contact.openinghours.days}`)
-      cy.get("#openinghours").should("contain", `${contact.openinghours.hours}`)
+      openingHours.should("contain", `${contact.openinghours.days}`)
+      openingHours.should("contain", `${contact.openinghours.hours}`)
     })
 
     it("Phone should be correct", () => {
