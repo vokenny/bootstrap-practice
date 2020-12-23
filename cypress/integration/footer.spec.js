@@ -8,24 +8,15 @@ context("Footer Spec", () => {
   describe("Footer content", () => {
     const contact = require("../fixtures/contact-details.json")
 
-    it("Opening hours should be correct", () => {
-      /*
-      Chaining .contains keeps looking inside the increasingly smaller scope,
-      so the whole element needs to be queried again if you want the whole element
+    it.only("Opening hours should be correct", () => {
+      const openingHours = cy.get("#foot-openinghours")
 
-      Assigning the element to a variable, and referencing the variable doesn't work either
-      i.e. 
-      var openingHours = cy.get("#foot-openinghours")
       openingHours.should("contain", "Opening Hours")
-      openingHours.should("contain", "Monday - Friday") // Still looks inside the smaller scope
-      */
-
-      cy.get("#foot-openinghours").should("contain", "Opening Hours")
-      cy.get("#foot-openinghours").should("contain", `${contact.openinghours.days}`)
+      openingHours.should("contain", `${contact.openinghours.days}`)
 
       // This step fails to find "8:00am - 4:30pm" for some reason
       // despite being present in the element text
-      // cy.get("#foot-openinghours").should("contain", `${contact.openinghours.hours}`)
+      // openingHours.should("contain", `${contact.openinghours.hours}`)
     })
 
     it("Phone should be correct", () => {

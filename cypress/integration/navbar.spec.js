@@ -15,22 +15,13 @@ context("Navbar Spec", () => {
     })
 
     it("Navber menu items should contain five items", () => {
-      /*
-      Chaining .contains keeps looking inside the increasingly smaller scope,
-      so the whole element needs to be queried again if you want the whole element
-
-      Assigning the element to a variable, and referencing the variable doesn't work either
-      i.e. 
-      var navItems = cy.get("#foot-openinghours")
+      const navItems = cy.get(".navbar-nav > li")
+      
       navItems.should("contain", "Home")
-      navItems.should("contain", "Info Table") // Still looks inside the smaller scope
-      */
-
-      cy.get(".navbar-nav > li").should("contain", "Home")
-      cy.get(".navbar-nav > li").should("contain", "Info Table")
-      cy.get(".navbar-nav > li").should("contain", "Gallery")
-      cy.get(".navbar-nav > li").should("contain", "Card Containers")
-      cy.get(".navbar-nav > li").should("contain", "Form & Alert")
+      navItems.should("contain", "Info Table")
+      navItems.should("contain", "Gallery")
+      navItems.should("contain", "Card Containers")
+      navItems.should("contain", "Form & Alert")
     })
   })
 
