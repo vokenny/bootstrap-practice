@@ -9,7 +9,7 @@ context("Table Spec", () => {
   })
 
   describe("Info Table content", () => {
-    it("Table content should be correct", () => {
+    it("The whole Table content should be correct", () => {
       cy.get("#menu-table th:first-child > h3").should("contain", "Main")
       cy.get("#menu-table th:last-child > h3").should("contain", "Price")
 

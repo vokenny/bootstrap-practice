@@ -54,7 +54,7 @@ context("Home Snippet Spec", () => {
 
     const carouselIndicators = require("../fixtures/carousel-indicators.json")
     carouselIndicators.forEach((indicator) =>
-      it("Clicking the indicators should jump straight to the corresponding slide", () => {
+      it("Clicking each indicator should jump straight to the corresponding slide", () => {
         cy.get(`${indicator.selector}`).click()
         cy.get(".carousel-caption > h4").should("contain", indicator.caption)
       })

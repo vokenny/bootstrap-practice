@@ -9,10 +9,10 @@ context("Card Containers Spec", () => {
   })
 
   describe("Card Containers content", () => {
-    it("Client Testimonials should be correct", () => {
-      const clientTestimonials = require("../fixtures/cards.json")
+    const clientTestimonials = require("../fixtures/cards.json")
 
-      clientTestimonials.forEach((card) => {
+    clientTestimonials.forEach((card) => {
+      it("Each Client Testimonial should be correct", () => {
         // TODO: It's not able to match the large piece of content in the card containers...?
         // cy.get(`.review-card:nth-child(${card.index}) p`).should("contain", `${card.review}`)
         cy.get(`.review-card:nth-child(${card.index}) strong`).should("contain", `${card.name}`)

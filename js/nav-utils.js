@@ -5,7 +5,7 @@
   function removeActiveFromNavbarMenuItems () {
     var menuItems = document.querySelectorAll(".nav-link");
 
-    menuItems.forEach(function (item, index, menu) {
+    menuItems.forEach(function (item) {
       classes = item.className.replace(new RegExp("active", "g"), "");
       item.className = classes
     });
