@@ -2,11 +2,13 @@
 
   var navUtils = {};
 
+  const ACTIVE_CLASS = 'active'
+
   function removeActiveFromNavbarMenuItems () {
     var menuItems = document.querySelectorAll('.nav-link');
 
     menuItems.forEach(function (item) {
-      var classes = item.className.replace(new RegExp('active', 'g'), '');
+      var classes = item.className.replace(new RegExp(ACTIVE_CLASS, 'g'), '');
       item.className = classes
     });
   }
@@ -17,8 +19,9 @@
     var elem = document.querySelector(selector);
     var classes = elem.className;
 
-    if (classes.indexOf('active') === -1) {
-      classes += ' active';
+    // if 'active' class is not present
+    if (classes.indexOf(ACTIVE_CLASS) === -1) {
+      classes += ' ' + ACTIVE_CLASS;
       elem.className = classes;
     }
   };

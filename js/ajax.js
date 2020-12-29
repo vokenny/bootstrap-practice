@@ -21,9 +21,10 @@
                          responseHandler,
                          isJsonResponse); 
         };
-      request.open('GET', requestUrl, true);
+
+      request.open('GET', requestUrl, true); // asynchronous request = true
       request.setRequestHeader('SameSite', 'Lax')
-      request.send(null); // for POST only
+      request.send(null); // null body
     };
   
   // Only calls user provided 'responseHandler'
@@ -32,6 +33,7 @@
   function handleResponse(request,
                           responseHandler,
                           isJsonResponse) {
+    // readyState 4 = DONE
     if ((request.readyState == 4) &&
        (request.status == 200)) {
   

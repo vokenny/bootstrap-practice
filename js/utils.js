@@ -3,14 +3,15 @@
   // namespace for utilities
   var utils = {};
 
-  var appTitle = 'Bootstrap Practice';
+  const APP_TITLE = 'Bootstrap Practice';
+  const MAIN_CONTENT_ID = '#content'
   
-  var homeHtmlUrl = 'snippets/home.html';
-  var tableHtmlUrl = 'snippets/table.html';
-  var galleryHtmlUrl = 'snippets/gallery.html';
-  var cardsHtmlUrl = 'snippets/cards.html';
-  var formHtmlUrl = 'snippets/form.html';
-  var successAlertHtmlUrl = 'snippets/success-alert.html';
+  const HOME_HTML_URL = 'snippets/home.html';
+  const TABLE_HTML_URL = 'snippets/table.html';
+  const GALLERY_HTML_URL = 'snippets/gallery.html';
+  const CARDS_HTML_URL = 'snippets/cards.html';
+  const FORM_HTML_URL = 'snippets/form.html';
+  const SUCCESS_ALERT_HTML_URL = 'snippets/success-alert.html';
 
   // Convenience function for inserting innerHTML for 'selector'
   function insertHtml (selector, html) {
@@ -36,18 +37,18 @@
 
   function updateTitle (heading) {
     var selector = 'head > title';
-    var newInnerHtml = heading + ' - ' + appTitle;
+    var newInnerHtml = heading + ' - ' + APP_TITLE;
     insertHtml(selector, newInnerHtml);
   }
 
   utils.loadAndShowHome = function () {
     updateTitle('Home');
-    showLoading('#content');
+    showLoading(MAIN_CONTENT_ID);
 
     $ajax.sendGetRequest(
-      homeHtmlUrl,
+      HOME_HTML_URL,
       function (homeHtml) {
-        insertHtml('#content', homeHtml);
+        insertHtml(MAIN_CONTENT_ID, homeHtml);
       },
       false
     );
@@ -55,12 +56,12 @@
 
   utils.loadAndShowTable = function () {
     updateTitle('Info Table');
-    showLoading('#content');
+    showLoading(MAIN_CONTENT_ID);
 
     $ajax.sendGetRequest(
-      tableHtmlUrl,
+      TABLE_HTML_URL,
       function (tableHtml) {
-        insertHtml('#content', tableHtml);
+        insertHtml(MAIN_CONTENT_ID, tableHtml);
       },
       false
     );
@@ -68,12 +69,12 @@
 
   utils.loadAndShowGallery = function () {
     updateTitle('Photo Gallery');
-    showLoading('#content');
+    showLoading(MAIN_CONTENT_ID);
 
     $ajax.sendGetRequest(
-      galleryHtmlUrl,
+      GALLERY_HTML_URL,
       function (galleryHtml) {
-        insertHtml('#content', galleryHtml);
+        insertHtml(MAIN_CONTENT_ID, galleryHtml);
       },
       false
     );
@@ -81,12 +82,12 @@
 
   utils.loadAndShowCards = function () {
     updateTitle('Card Containers');
-    showLoading('#content');
+    showLoading(MAIN_CONTENT_ID);
 
     $ajax.sendGetRequest(
-      cardsHtmlUrl,
+      CARDS_HTML_URL,
       function (cardsHtml) {
-        insertHtml('#content', cardsHtml);
+        insertHtml(MAIN_CONTENT_ID, cardsHtml);
       },
       false
     );
@@ -94,12 +95,12 @@
 
   utils.loadAndShowForm = function () {
     updateTitle('Form & Alert');
-    showLoading('#content');
+    showLoading(MAIN_CONTENT_ID);
 
     $ajax.sendGetRequest(
-      formHtmlUrl,
+      FORM_HTML_URL,
       function (formHtml) {
-        insertHtml('#content', formHtml);
+        insertHtml(MAIN_CONTENT_ID, formHtml);
       },
       false
     );
@@ -188,7 +189,7 @@
 
   function showSuccessFormAlert (formData) {
     $ajax.sendGetRequest(
-      successAlertHtmlUrl,
+      SUCCESS_ALERT_HTML_URL,
       function (successAlertHtml) {
         var successAlertWithName = insertProperty(successAlertHtml, 'fullname', formData.get('input-fullname'));
         var successAlertComplete = insertProperty(successAlertWithName, 'email', formData.get('input-email'));
