@@ -6,10 +6,10 @@
     var menuItems = document.querySelectorAll('.nav-link');
 
     menuItems.forEach(function (item) {
-      classes = item.className.replace(new RegExp('active', 'g'), '');
+      var classes = item.className.replace(new RegExp('active', 'g'), '');
       item.className = classes
     });
-  };
+  }
 
   navUtils.applyActiveToMenuItem = function (selector) {
     removeActiveFromNavbarMenuItems();
@@ -20,7 +20,7 @@
     if (classes.indexOf('active') === -1) {
       classes += ' active';
       elem.className = classes;
-    };
+    }
   };
 
   global.$navUtils = navUtils;

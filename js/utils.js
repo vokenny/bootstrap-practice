@@ -16,14 +16,14 @@
   function insertHtml (selector, html) {
     var targetElem = document.querySelector(selector);
     targetElem.innerHTML = html;
-  };
+  }
 
   // Show loading icon inside element identified by 'selector'
   function showLoading (selector) {
     var html = '<div class="text-center">';
     html += '<img id="ajax-loader" src="assets/images/ajax-loader.gif"></div>';
     insertHtml(selector, html);
-  };
+  }
 
   // Return substitute of '{{propName}}'
   // with propValue in given 'string'
@@ -32,13 +32,13 @@
     string = string
       .replace(new RegExp(propToReplace, 'g'), propValue);
     return string;
-  };
+  }
 
   function updateTitle (heading) {
     var selector = 'head > title';
     var newInnerHtml = heading + ' - ' + appTitle;
     insertHtml(selector, newInnerHtml);
-  };
+  }
 
   utils.loadAndShowHome = function () {
     updateTitle('Home');
@@ -120,8 +120,8 @@
         case 'input-email':
           checkEmail(pair);
           break;
-      };
-    };
+      }
+    }
 
     // If all form inputs have 'is-valid', then show the succcess alert
     var formArray = Array.from(document.querySelectorAll('.form-control'));
@@ -131,7 +131,7 @@
       showSuccessFormAlert(formData);
     } else {
       $('html, body').animate({ scrollTop: 0 }, 'slow');
-    };
+    }
   };
 
   function resetFormState () {
@@ -146,7 +146,7 @@
     document.querySelectorAll('.invalid-feedback').forEach(function (elem) {
       elem.style.display = 'none';
     });
-  };
+  }
 
   function checkFullName (pair) {
     if (pair[1] === '' || pair[1].length > 100) {
@@ -154,8 +154,8 @@
       displayError(pair[0]);
     } else {
       applyValidityClass(true, pair[0]);
-    };
-  };
+    }
+  }
 
   function checkEmail (pair) {
     // Regex from https://www.w3resource.com/javascript/form/email-validation.php
@@ -166,8 +166,8 @@
       displayError(pair[0]);
     } else {
       applyValidityClass(true, pair[0]);
-    };
-  };
+    }
+  }
 
   function applyValidityClass (isValid, selector) {
     var elem = document.querySelector('#' + selector);
@@ -176,15 +176,15 @@
 
     classes += validity;
     elem.className = classes;
-  };
+  }
 
   function displayError (selector) {
     document.querySelector('#' + selector + ' + .invalid-feedback').style.display = 'block';
-  };
+  }
 
   function checkForIsValidClass (elem) {
     return elem.classList.contains('is-valid');
-  };
+  }
 
   function showSuccessFormAlert (formData) {
     $ajax.sendGetRequest(
@@ -196,10 +196,10 @@
         insertHtml('#success-alert', successAlertComplete);
       },
       false
-    );
+    )
 
     $('html, body').animate({ scrollTop: 0 }, 'slow');
-  };
+  }
 
   global.$utils = utils;
 
