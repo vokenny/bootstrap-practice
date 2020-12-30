@@ -1,5 +1,5 @@
 # bootstrap-practice
-Familiarizing with Bootstrap 4 components, and trying out the Javascript Cypress test framework
+Familiarizing with Bootstrap 4 components, and trying out the Javascript Cypress test framework.
 
 <b>GitHub Pages link</b>
 
@@ -23,7 +23,7 @@ To watch all the files in the project, and start a server:
 
 `browser-sync start --server --files "**/*"`
 
-Browsersync will provide a URL to view the site
+Browsersync will provide a URL to view the site.
 
 ### Cypress
 Install Cypress via `npm`
@@ -42,11 +42,11 @@ https://docs.cypress.io/guides/getting-started/installing-cypress.html#Installin
 ## Accessibility
 <b>21/12/20</b>
 
-[WAVE](https://wave.webaim.org/): 1 error for poor contrast
+- [WAVE](https://wave.webaim.org/): 1 error for poor contrast
 
-[Axe](https://www.deque.com/axe/): 7 errors for poor contrast
+- [Axe](https://www.deque.com/axe/): 7 errors for poor contrast
 
-[HTML Validator](https://addons.mozilla.org/en-US/firefox/addon/html-validator/): No errors
+- [HTML Validator](https://addons.mozilla.org/en-US/firefox/addon/html-validator/): No errors
 
 ## Known bugs
 1. 'Next' and 'Back' links on Homepage carousel expand outside of carousel borders in the corners
