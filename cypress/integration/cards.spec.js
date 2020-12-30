@@ -1,7 +1,8 @@
 /// <reference types='cypress' />
 
-context('Card Containers Spec', () => {
+describe('Card Containers Spec', () => {
   beforeEach(() => {
+    cy.clearCookies()
     cy.visit('/index.html')
     cy.get('#nav-cards').click()
     cy.get('title').should('contain', 'Card Containers - Bootstrap Practice')

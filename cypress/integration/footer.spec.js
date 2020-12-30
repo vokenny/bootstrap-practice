@@ -1,7 +1,8 @@
 /// <reference types='cypress' />
 
-context('Footer Spec', () => {
+describe('Footer Spec', () => {
   beforeEach(() => {
+    cy.clearCookies()
     cy.visit('/index.html')
   })
 

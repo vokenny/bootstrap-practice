@@ -1,7 +1,8 @@
 /// <reference types='cypress' />
 
-context('Table Spec', () => {
+describe('Table Spec', () => {
   beforeEach(() => {
+    cy.clearCookies()
     cy.visit('/index.html')
     cy.get('#nav-table').click()
     cy.get('title').should('contain', 'Info Table - Bootstrap Practice')

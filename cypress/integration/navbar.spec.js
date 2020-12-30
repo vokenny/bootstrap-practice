@@ -1,27 +1,51 @@
 /// <reference types='cypress' />
 
-context('Navbar Spec', () => {
+describe('Navbar Spec', () => {
   beforeEach(() => {
+    cy.clearCookies()
     cy.visit('/index.html')
   })
 
-  describe('Navbar content', () => {
-    it('Logo should be visible in navbar', () => {
-      cy.get('#logo').should('be.visible')
-    })
+  describe('Navbar branding', () => {
+    const screenSizes = require('../fixtures/screen-sizes.json')
+    
+    screenSizes.forEach((screen) => {
+      context(`Using ${screen.model} in ${screen.orientation} orientation`, () => {
+        beforeEach(() => {
+          cy.viewport(screen.model, screen.orientation)
+        })
 
-    it('Brand name should be visible in navbar', () => {
-      cy.get('#brand').should('contain', 'bootstrAp prActice').and('be.visible')
+        it('Logo should be visible in navbar', () => {
+          cy.get('#logo').should('be.visible')
+        })
+    
+        it('Brand name should be visible in navbar', () => {
+          cy.get('#brand').should('contain', 'bootstrAp prActice').and('be.visible')
+        })
+      })
     })
+  })
 
-    it('Navber menu items should contain five items', () => {
-      const navItems = cy.get('.navbar-nav > li')
-      
-      navItems.should('contain', 'Home')
-      navItems.should('contain', 'Info Table')
-      navItems.should('contain', 'Gallery')
-      navItems.should('contain', 'Card Containers')
-      navItems.should('contain', 'Form & Alert')
+  describe('Navbar toggle should only be immediately visible on screen widths less than than 992px', () => {
+    const screenWidths = [992, 991]
+
+    screenWidths.forEach((width) => {
+      it(`Testing at screen width of ${width}px`, () => {  
+        cy.viewport(width, 800)
+        cy.visit('/index.html')
+
+        const navItems = cy.get('.navbar-nav > li')
+        
+        if (width === 991) {
+          navItems.should("be.hidden")
+        } else {
+          navItems.should('be.visible').and('contain', 'Home')
+          navItems.should('be.visible').and('contain', 'Info Table')
+          navItems.should('be.visible').and('contain', 'Gallery')
+          navItems.should('be.visible').and('contain', 'Card Containers')
+          navItems.should('be.visible').and('contain', 'Form & Alert')  
+        }
+      })
     })
   })
 

@@ -1,0 +1,22 @@
+[
+  {
+    "model": "iphone-5",
+    "orientation": "portrait"
+  },
+  {
+    "model": "iphone-5",
+    "orientation": "landscape"
+  },
+  {
+    "model": "ipad-2",
+    "orientation": "portrait"
+  },
+  {
+    "model": "iphone-5",
+    "orientation": "landscape"
+  },
+  {
+    "model": "macbook-13",
+    "orientation": "landscape"
+  }
+]

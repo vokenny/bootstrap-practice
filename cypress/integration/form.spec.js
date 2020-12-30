@@ -1,7 +1,8 @@
 /// <reference types='cypress' />
 
-context('Form Snippet Spec', () => {
+describe('Form Snippet Spec', () => {
   beforeEach(() => {
+    cy.clearCookies()
     cy.visit('/index.html')
     cy.get('#nav-form').click()
     cy.get('title').should('contain', 'Form & Alert - Bootstrap Practice')

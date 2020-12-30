@@ -1,7 +1,8 @@
 /// <reference types='cypress' />
 
-context('Gallery Spec', () => {
+describe('Gallery Spec', () => {
   beforeEach(() => {
+    cy.clearCookies()
     cy.visit('/index.html')
     cy.get('#nav-gallery').click()
     cy.get('title').should('contain', 'Photo Gallery - Bootstrap Practice')

@@ -1,8 +1,9 @@
 /// <reference types='cypress' />
 
-context('Home Snippet Spec', () => {
+describe('Home Snippet Spec', () => {
   beforeEach(() => {
-      cy.visit('/index.html')
+    cy.clearCookies()
+    cy.visit('/index.html')
   })
 
   describe('Home content', () => {
