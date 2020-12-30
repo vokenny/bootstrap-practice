@@ -3,7 +3,7 @@ Familiarizing with Bootstrap 4 components, and trying out the Javascript Cypress
 
 <b>GitHub Pages link</b>
 
-https://vokenny.github.io/bootstrap-practice/index.html
+https://vokenny.github.io/bootstrap-practice/
 
 ## Dependencies
 ### Node.js and Node Package Manager (`npm`)
