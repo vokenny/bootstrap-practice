@@ -31,10 +31,19 @@ Install Cypress via `npm`.
 https://docs.cypress.io/guides/getting-started/installing-cypress.html#Installing
 
 #### Cypress Test Runner
+N.B. Test artefacts such as screenshots upon failure, and video recordings are not captured when running tests via the UI
+
+1. You need to start the site running on default port 3000 provided by Browsersync. If the site is running on a different port, change the `baseUrl` config value in `cypress.json`.
+2. As defined in `package.json`, enter the following command in the project directory:
+`npm run cypress-ui`
+3. The Cypress test runner UI should open, select your browser then click 'Run X integration tests'
+
+#### Cypress Test CLI
+N.B. Only screenshots upon test failure are captured. Video recordings are disabled in `cypress.json`.
+
 1. You need to start the site running on default port 3000 provided by Browsersync. If the site is running on a different port, change the `baseUrl` config value in `cypress.json`.
 2. As defined in `package.json`, enter the following command in the project directory:
 `npm run cypress`
-3. The Cypress test runner UI should open, select your browser then click 'Run X integration tests'
 
 ## TODO
 - Add screenshot upon test failure

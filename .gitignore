@@ -1,1 +1,6 @@
-node_modules
+# Dependency directories
+node_modules/
+
+# Test artefacts
+cypress/screenshots
+cypress/videos
