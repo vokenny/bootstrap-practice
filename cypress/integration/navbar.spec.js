@@ -3,7 +3,7 @@
 describe('Navbar Spec', () => {
   beforeEach(() => {
     cy.clearCookies()
-    cy.visit('/index.html')
+    cy.visit('/')
   })
 
   describe('Navbar branding', () => {

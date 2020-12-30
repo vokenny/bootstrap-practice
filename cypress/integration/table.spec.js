@@ -3,7 +3,7 @@
 describe('Table Spec', () => {
   beforeEach(() => {
     cy.clearCookies()
-    cy.visit('/index.html')
+    cy.visit('/')
     cy.get('#nav-table').click()
     cy.get('title').should('contain', 'Info Table - Bootstrap Practice')
     cy.get('h2').should('contain', 'Vietnamese Dishes')

@@ -3,7 +3,7 @@
 describe('Card Containers Spec', () => {
   beforeEach(() => {
     cy.clearCookies()
-    cy.visit('/index.html')
+    cy.visit('/')
     cy.get('#nav-cards').click()
     cy.get('title').should('contain', 'Card Containers - Bootstrap Practice')
     cy.get('h2').should('contain', 'Client Testimonials')

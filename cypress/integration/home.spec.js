@@ -3,7 +3,7 @@
 describe('Home Snippet Spec', () => {
   beforeEach(() => {
     cy.clearCookies()
-    cy.visit('/index.html')
+    cy.visit('/')
   })
 
   describe('Home content', () => {

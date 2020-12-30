@@ -3,7 +3,7 @@
 describe('Form Snippet Spec', () => {
   beforeEach(() => {
     cy.clearCookies()
-    cy.visit('/index.html')
+    cy.visit('/')
     cy.get('#nav-form').click()
     cy.get('title').should('contain', 'Form & Alert - Bootstrap Practice')
     cy.get('h2').should('contain', 'Beep Boop Test Form')

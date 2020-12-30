@@ -3,7 +3,7 @@
 describe('Gallery Spec', () => {
   beforeEach(() => {
     cy.clearCookies()
-    cy.visit('/index.html')
+    cy.visit('/')
     cy.get('#nav-gallery').click()
     cy.get('title').should('contain', 'Photo Gallery - Bootstrap Practice')
     cy.get('h2').should('contain', 'Photo Gallery')
