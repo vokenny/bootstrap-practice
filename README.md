@@ -45,9 +45,6 @@ N.B. Only screenshots upon test failure are captured. Video recordings are disab
 2. As defined in `package.json`, enter the following command in the project directory:
 `npm run cypress`
 
-## TODO
-- Add screenshot upon test failure
-
 ## Accessibility
 <b>21/12/20</b>
 
