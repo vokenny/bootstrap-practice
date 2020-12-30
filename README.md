@@ -1,9 +1,23 @@
 # bootstrap-practice
-Familiarizing with Bootstrap 4 components, and trying out the Javascript Cypress test framework.
+A dummy website to familiarize with Bootstrap 4 components, and trying out the Javascript Cypress test framework.
 
 <b>GitHub Pages link</b>
 
 https://vokenny.github.io/bootstrap-practice/
+
+- Responsive design
+- Image carousel
+- Tables
+- Photo gallery with lightbox
+- Card containers
+- Form with basic validation, and alert
+
+<b>Cypress implementations</b>
+- Tests for different viewport sizes
+- Common test hooks
+- Fixtures for test data in single tests
+- Fixtures for reusing single tests for multiple cases
+- Screenshots upon failure
 
 ## Dependencies
 ### Node.js and Node Package Manager (`npm`)
