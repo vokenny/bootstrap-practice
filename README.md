@@ -5,15 +5,38 @@ Familiarizing with Bootstrap 4 components, and trying out the Javascript Cypress
 
 https://vokenny.github.io/bootstrap-practice/index.html
 
-<b>To open Cypress</b>
+## Dependencies
+### Node.js and Node Package Manager (`npm`)
+You need Node.js and `npm` to install & use Browsersync and Cypress. More specifically, you need Node.js 10, or 12 and above for Cypress.
 
-As defined in `package.json`:
+`npm` is bundled with Node.js installation.
 
+https://nodejs.org/en/
+
+### Browsersync
+Browsersync is for running the project on a mini server for rapid browser testing.
+
+https://www.browsersync.io/#install
+
+#### Starting the server
+To watch all the files in the project, and start a server:
+
+`browser-sync start --server --files "**/*"`
+
+Browsersync will provide a URL to view the site
+
+### Cypress
+Install Cypress via `npm`
+
+https://docs.cypress.io/guides/getting-started/installing-cypress.html#Installing
+
+#### Cypress Test Runner
+1. You need to start the site running on default port 3000 provided by Browsersync. If the site is running on a different port, change the `baseUrl` config value in `cypress.json`.
+2. As defined in `package.json`, enter the following command in the project directory:
 `npm run cypress`
+3. The Cypress test runner UI should open, select your browser then click 'Run X integration tests'
 
 ## TODO
-- Add tablet view tests
-- Add mobile view tests
 - Add screenshot upon test failure
 
 ## Accessibility
