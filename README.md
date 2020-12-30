@@ -14,6 +14,7 @@ As defined in `package.json`:
 ## TODO
 - Add tablet view tests
 - Add mobile view tests
+- Add screenshot upon test failure
 
 ## Accessibility
 <b>21/12/20</b>
