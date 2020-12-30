@@ -1,11 +1,6 @@
 /// <reference types='cypress' />
 
 describe('Navbar Spec', () => {
-  beforeEach(() => {
-    cy.clearCookies()
-    cy.visit('/')
-  })
-
   describe('Navbar branding', () => {
     const screenSizes = require('../fixtures/screen-sizes.json')
     

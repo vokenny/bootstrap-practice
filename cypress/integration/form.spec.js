@@ -2,8 +2,6 @@
 
 describe('Form Snippet Spec', () => {
   beforeEach(() => {
-    cy.clearCookies()
-    cy.visit('/')
     cy.get('#nav-form').click()
     cy.get('title').should('contain', 'Form & Alert - Bootstrap Practice')
     cy.get('h2').should('contain', 'Beep Boop Test Form')
@@ -81,5 +79,4 @@ describe('Form Snippet Spec', () => {
         .should('contain', 'Please enter a valid email address.')
     })
   })
-
 })

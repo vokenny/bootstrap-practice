@@ -1,11 +1,6 @@
 /// <reference types='cypress' />
 
 describe('Home Snippet Spec', () => {
-  beforeEach(() => {
-    cy.clearCookies()
-    cy.visit('/')
-  })
-
   describe('Home content', () => {
     const contact = require('../fixtures/contact-details.json')
 
@@ -52,5 +47,4 @@ describe('Home Snippet Spec', () => {
       })
     )
   })
-
 })

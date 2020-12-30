@@ -26,7 +26,7 @@ To watch all the files in the project, and start a server:
 Browsersync will provide a URL to view the site.
 
 ### Cypress
-Install Cypress via `npm`
+Install Cypress via `npm`.
 
 https://docs.cypress.io/guides/getting-started/installing-cypress.html#Installing
 

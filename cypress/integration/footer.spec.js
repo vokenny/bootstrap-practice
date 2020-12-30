@@ -1,11 +1,6 @@
 /// <reference types='cypress' />
 
 describe('Footer Spec', () => {
-  beforeEach(() => {
-    cy.clearCookies()
-    cy.visit('/')
-  })
-
   describe('Footer content', () => {
     const contact = require('../fixtures/contact-details.json')
 
@@ -33,5 +28,4 @@ describe('Footer Spec', () => {
       cy.get('#foot-address').should('contain', `${contact.address.postcode}`)
     })
   })
-
 })
