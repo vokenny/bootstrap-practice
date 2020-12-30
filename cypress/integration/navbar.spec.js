@@ -20,32 +20,24 @@ describe('Navbar Spec', () => {
         })
     
         it('Brand name should be visible in navbar', () => {
-          cy.get('#brand').should('contain', 'bootstrAp prActice').and('be.visible')
+          cy.get('#brand').should('be.visible').and('contain', 'bootstrAp prActice')
         })
       })
     })
   })
 
-  describe('Navbar toggle should only be immediately visible on screen widths less than than 992px', () => {
+  describe('Navbar toggle should only be visible under 992px', () => {
     const screenWidths = [992, 991]
 
     screenWidths.forEach((width) => {
-      it(`Testing at screen width of ${width}px`, () => {  
+      it(`Testing at screen width ${width}px`, () => {
         cy.viewport(width, 800)
-        cy.visit('/index.html')
 
-        const navItems = cy.get('.navbar-nav > li')
+        const navToggle = cy.get('#navbar-toggle')
         
-        if (width === 991) {
-          navItems.should("be.hidden")
-        } else {
-          navItems.should('be.visible').and('contain', 'Home')
-          navItems.should('be.visible').and('contain', 'Info Table')
-          navItems.should('be.visible').and('contain', 'Gallery')
-          navItems.should('be.visible').and('contain', 'Card Containers')
-          navItems.should('be.visible').and('contain', 'Form & Alert')  
-        }
-      })
+        if (width < 992) navToggle.should('be.visible')
+        else navToggle.should('be.hidden')
+      })     
     })
   })
 
@@ -88,9 +80,42 @@ describe('Navbar Spec', () => {
         cy.get('h2').should('contain', `${testCase.heading}`)
         cy.get(`${testCase.linkId}`)
           .should('have.attr', 'class')
-          .should('contain', 'active')
+          .and('contain', 'active')
       })
     })        
   })
 
+  describe('Navbar toggle interaction', () => {
+    context(`Using 991px screen width so navbar toggle is visible`, () => {
+      beforeEach(() => {
+        cy.viewport(991, 800)
+        cy.get('.navbar-nav > li').should('be.hidden')
+        cy.get('#navbar-toggle').should('be.visible')
+      })
+
+      it('Clicking "Home" should show home.html snippet', () => {
+        cy.get('#navbar-toggle').click()
+        cy.get('#nav-home').should('be.visible').click()
+        cy.get('title').should('contain', 'Home - Bootstrap Practice')
+        cy.get('#carouselWithIndicators').should('be.visible')
+        cy.get('#nav-home')
+        .should('have.attr', 'class')
+        .should('contain', 'active')
+      })
+
+      const navbarData = require('../fixtures/navbar.json')
+
+      navbarData.forEach((testCase) => {
+        it(`Clicking "${testCase.link}" should show ${testCase.snippet} snippet`, () => {
+          cy.get('#navbar-toggle').click()
+          cy.get(`${testCase.linkId}`).click()
+          cy.get('title').should('contain', `${testCase.title}`)
+          cy.get('h2').should('contain', `${testCase.heading}`)
+          cy.get(`${testCase.linkId}`)
+            .should('have.attr', 'class')
+            .and('contain', 'active')
+        })
+      })          
+    })
+  })
 })
