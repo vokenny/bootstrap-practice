@@ -63,6 +63,18 @@ describe('Navbar Spec', () => {
       .should('have.attr', 'class')
       .should('contain', 'active')
     })
+
+    it.only('Clicking another snippet, then the brand name should show home.html snippet', () => {
+      cy.get('#nav-table').click()
+      cy.get('h2').should('contain', 'Vietnamese Dishes')
+
+      cy.get('#brand').click()
+      cy.get('title').should('contain', 'Home - Bootstrap Practice')
+      cy.get('#carouselWithIndicators').should('be.visible')
+      cy.get('#nav-home')
+      .should('have.attr', 'class')
+      .should('contain', 'active')
+    })
   })
 
   describe('Navbar interaction - Other snippets', () => {

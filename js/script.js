@@ -16,6 +16,19 @@ $(function () { // Same as document.addEventListener('DOMContentLoaded'...
     $('html, body').animate({ scrollTop: 0 }, SCROLL_SPEED);
   })
 
+  // Clicking on the logo or brand name will reload home.html snippet
+  $('#logo').on('click', function () {
+    $navUtils.applyActiveToMenuItem('#nav-home');
+    $utils.loadAndShowHome();
+    $('html, body').animate({ scrollTop: 0 }, SCROLL_SPEED);
+  });
+
+  $('#brand').on('click', function () {
+    $navUtils.applyActiveToMenuItem('#nav-home');
+    $utils.loadAndShowHome();
+    $('html, body').animate({ scrollTop: 0 }, SCROLL_SPEED);
+  });
+
   // Make nav items active, and load their corresponding snippet into #content 
   $('#nav-home').on('click', function () {
     $navUtils.applyActiveToMenuItem('#nav-home');
