@@ -1,4 +1,4 @@
 beforeEach(() => {
-  cy.clearCookies()
-  cy.visit('/')
+  cy.clearCookies();
+  cy.visit('/');
 })
