@@ -21,11 +21,13 @@ describe('Footer Spec', () => {
     })
 
     it('Address should be correct', () => {
-      cy.get('#foot-address').should('contain', 'Address')
-      cy.get('#foot-address').should('contain', `${contact.address.building}`)
-      cy.get('#foot-address').should('contain', `${contact.address.street}`)
-      cy.get('#foot-address').should('contain', `${contact.address.city}`)
-      cy.get('#foot-address').should('contain', `${contact.address.postcode}`)
+      const address = cy.get('#foot-address')
+
+      address.should('contain', 'Address')
+      address.should('contain', `${contact.address.building}`)
+      address.should('contain', `${contact.address.street}`)
+      address.should('contain', `${contact.address.city}`)
+      address.should('contain', `${contact.address.postcode}`)
     })
   })
 })

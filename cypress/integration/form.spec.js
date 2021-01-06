@@ -21,7 +21,6 @@ describe('Form Snippet Spec', () => {
         .should('have.attr', 'placeholder')
         .should('contain', `${form.nameField.placeholder}`)
 
-
       cy.get('#email-field').should('contain', `${form.emailField.label}`)
       cy.get('#email-field').should('contain', `${form.emailField.helptext}`)
       cy.get('#email-field > input')
