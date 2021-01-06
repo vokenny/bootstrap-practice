@@ -6,7 +6,7 @@ describe('Home Snippet Spec', () => {
 
     it('Opening hours should be correct', () => {
       const openingHours = cy.get('#openinghours')
-      
+
       openingHours.should('contain', 'Opening Hours')
       openingHours.should('contain', `${contact.openinghours.days}`)
       openingHours.should('contain', `${contact.openinghours.hours}`)

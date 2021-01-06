@@ -3,7 +3,7 @@
 describe('Navbar Spec', () => {
   describe('Navbar branding', () => {
     const screenSizes = require('../fixtures/screen-sizes.json')
-    
+
     screenSizes.forEach((screen) => {
       context(`Using ${screen.model} in ${screen.orientation} orientation`, () => {
         beforeEach(() => {
@@ -13,7 +13,7 @@ describe('Navbar Spec', () => {
         it('Logo should be visible in navbar', () => {
           cy.get('#logo').should('be.visible')
         })
-    
+
         it('Brand name should be visible in navbar', () => {
           cy.get('#brand').should('be.visible').and('contain', 'bootstrAp prActice')
         })
@@ -29,10 +29,10 @@ describe('Navbar Spec', () => {
         cy.viewport(width, 800)
 
         const navToggle = cy.get('#navbar-toggle')
-        
+
         if (width < 992) navToggle.should('be.visible')
         else navToggle.should('be.hidden')
-      })     
+      })
     })
   })
 
@@ -51,8 +51,8 @@ describe('Navbar Spec', () => {
       cy.get('title').should('contain', 'Home - Bootstrap Practice')
       cy.get('#carouselWithIndicators').should('be.visible')
       cy.get('#nav-home')
-      .should('have.attr', 'class')
-      .should('contain', 'active')
+        .should('have.attr', 'class')
+        .should('contain', 'active')
     })
 
     it('Clicking "Home" should show home.html snippet', () => {
@@ -60,11 +60,11 @@ describe('Navbar Spec', () => {
       cy.get('title').should('contain', 'Home - Bootstrap Practice')
       cy.get('#carouselWithIndicators').should('be.visible')
       cy.get('#nav-home')
-      .should('have.attr', 'class')
-      .should('contain', 'active')
+        .should('have.attr', 'class')
+        .should('contain', 'active')
     })
 
-    it.only('Clicking another snippet, then the brand name should show home.html snippet', () => {
+    it('Clicking another snippet, then the brand name should show home.html snippet', () => {
       cy.get('#nav-table').click()
       cy.get('h2').should('contain', 'Vietnamese Dishes')
 
@@ -72,8 +72,8 @@ describe('Navbar Spec', () => {
       cy.get('title').should('contain', 'Home - Bootstrap Practice')
       cy.get('#carouselWithIndicators').should('be.visible')
       cy.get('#nav-home')
-      .should('have.attr', 'class')
-      .should('contain', 'active')
+        .should('have.attr', 'class')
+        .should('contain', 'active')
     })
   })
 
@@ -89,7 +89,7 @@ describe('Navbar Spec', () => {
           .should('have.attr', 'class')
           .and('contain', 'active')
       })
-    })        
+    })
   })
 
   describe('Navbar toggle interaction', () => {
@@ -106,8 +106,8 @@ describe('Navbar Spec', () => {
         cy.get('title').should('contain', 'Home - Bootstrap Practice')
         cy.get('#carouselWithIndicators').should('be.visible')
         cy.get('#nav-home')
-        .should('have.attr', 'class')
-        .should('contain', 'active')
+          .should('have.attr', 'class')
+          .should('contain', 'active')
       })
 
       const navbarData = require('../fixtures/navbar.json')
@@ -122,7 +122,7 @@ describe('Navbar Spec', () => {
             .should('have.attr', 'class')
             .and('contain', 'active')
         })
-      })          
+      })
     })
   })
 })
