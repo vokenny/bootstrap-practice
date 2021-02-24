@@ -22,7 +22,7 @@ h2 {
 
 footer {
   border-top: 2px solid #888888;
-  background-color: #00aa99;
+  background-color: #ffd900;
 }
 
 div.footer-contact {
@@ -49,7 +49,7 @@ div.footer-contact {
   margin: 2.5vh auto;
   border-radius: 20px;
   border: 2px solid #888888;
-  box-shadow: -10px 10px #008073;
+  box-shadow: -10px 10px #ffd900;
 }
 
 #menu-table thead {
@@ -90,7 +90,7 @@ div.footer-contact {
 #gallery img {
   border-radius: 20px;
   border: 2px solid #888888;
-  box-shadow: -10px 10px #008073;
+  box-shadow: -10px 10px #ffd900;
 }
 
 /* Card Containers snippet only */
@@ -103,7 +103,7 @@ div.footer-contact {
 .card {
   margin: 1vh 1vw;
   border: 2px solid #888888;
-  box-shadow: -10px 10px #008073;
+  box-shadow: -10px 10px #ffd900;
   border-radius: 20px;
 }
 
